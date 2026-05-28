@@ -18,6 +18,8 @@ require_once "funcoes.php"
 
 <body>
 
+    <a href="index.php"></a>
+
     <?php
 
     // echo "<h1>Inserir Leitor</h1>";
