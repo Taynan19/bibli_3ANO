@@ -11,14 +11,28 @@ require_once "funcoes.php"
     <title>Document</title>
 
     <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 20px;
+    }
+    h1 {
+        color: #333;
+    }
+    .leitor {
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+</style>
 
-        
-    </style>
 </head>
 
 <body>
 
-    <a href="index.php"></a>
+    <a href="index.php">voltar</a>
 
     <?php
 
@@ -33,8 +47,22 @@ require_once "funcoes.php"
         print_r($l);
         echo "<br>";
     }
-    ?>
 
+    echo "<h1>Buscar Leitor Por Nome</h1>";
+    $leitor = buscarLeitor($conexao, 2);
+    print_r($leitor->fetch_assoc());
+    echo "<br>";
+
+    echo "<h1>Atualizar Leitor</h1>"
+    atualizarLeitor($conexao, 1, "Joana", "123", "55555555555555", "62998989898", "2001-12-66", "admin");
+    echo"Leiror atualizado";
+
+    echo "<h1>Deletar Leitor</h1>"
+    deletarLeitor($conexao, 2);
+    echo "Leitor deletado";
+    
+    ?>
+    
 </body>
 
 </html>
