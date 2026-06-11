@@ -60,8 +60,22 @@ require_once "funcoes.php"
     echo "<h1>Deletar Leitor</h1>"
     deletarLeitor($conexao, 2);
     echo "Leitor deletado";
+
+    echo "<h1>Inserir Editora</h1>"
+    inserirEditoras ($conexao, 10, "Ney Edição", "Brasil");
+    echo "editora Criada";
+
+    echo "<h1>Listar Editoras</h1>";
+    $editora = listarEditora($conexao);
+    while($e = $editora -> fetch_assoc()){
+        print_r($e);
+        echo"<br>";
+    
+    
+    }
     
     ?>
+
     
 </body>
 
