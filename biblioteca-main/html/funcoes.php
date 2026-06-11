@@ -72,10 +72,10 @@
     function atualizarLeitor($conexao, $id, $nome, $senha, $cpf, $telefone, $nascimento, $tipo){
         $sql = "UPDATE leitores set nome =?, senha=?, cpf=?, telefone=?, nascimento=?, tipo=? WHERE id=? ";
         $stmt = $conexao->prepare($sql);
-        $stmt->bind_param("ssssssi, $nome, $senha, $cpf, $telefone, $nascimento, $tipo, $id");
+        $stmt->bind_param("ssssssi", $nome, $senha, $cpf, $telefone, $nascimento, $tipo, $id );
         $stmt->execute();
 
-        return $stmt->result();
+        // return $stmt->result();
 
     }
 
@@ -85,16 +85,16 @@
         $stmt->bind_param("i", $id);
         $stmt->execute();
 
-        return $stmt->result();
+        //return $stmt->result();
     }
 
 
-    function inserirEditoras ($conexao, $id, $nome, $pais){
-        $sql = "INSERT INTO editoras (id, nome, pais) VALUES (?,?,?)";
+    function inserirEditoras ($conexao, $nome, $pais){
+        $sql = "INSERT INTO editoras (nome, pais) VALUES (?,?)";
         $stmt = $conexao->prepare($sql);
-        $stmt->bind_param("ss", $id, $nome, $pais);
+        $stmt->bind_param("ss", $nome, $pais);
 
-        return $stmt->execute();
+        //return $stmt->execute();
     }
 
     function listarEditoras ($conexao){
@@ -114,8 +114,9 @@
         $sql = "UPDATE editoras SET nome=?, pais=?, WHERE id=?";
         $stmt = $conexao->prepare($sql);
         $stmt->bind_param("ssi", $nome, $pais, $id);
+        $stmt->execute();
 
-        return $stmt->execute();
+        //return $stmt->execute();
     }
 
     function deletarEditoras ($conexao, $id){

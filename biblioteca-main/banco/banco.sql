@@ -33,7 +33,7 @@ ENGINE = InnoDB;
 -- Table `banco`.`editoras`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banco`.`editoras` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL, AUTO_INCREMENT,
   `nome` VARCHAR(90) NULL,
   `pais` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
