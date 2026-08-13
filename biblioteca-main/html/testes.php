@@ -1,10 +1,28 @@
 <?php
+session_start();
+
+if (!isset($session['usuario'])){
+    header("location: loguin.php");
+    exit;
+}
 require_once 'funcoes.php';
 
 // ===============================
 // LEITORES - CRUD
 // ===============================
-
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+<body>
+    <a href="logout.php">deslogar</a>
+</body>
+</html>
+<?php
 echo "<h1> Inserir Leitor </h1>";
 inserirLeitor($conexao, "Adauto", "123", "1111111111", "62991111111", "2000-01-01", 
 "admin");
@@ -104,3 +122,4 @@ $emp = buscarEmprestimo($conexao, 1);
 print_r($emp->fetch_assoc());
 echo "<br>";
 ?>
+

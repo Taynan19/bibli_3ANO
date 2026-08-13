@@ -1,4 +1,11 @@
 <?php
+    session_start();
+    
+    if (!isset($session['usuario'])){
+        header("location: loguin.php");
+        exit;
+    }
+
     require_once "conexao.php";
     require_once "funcoes.php";
 
