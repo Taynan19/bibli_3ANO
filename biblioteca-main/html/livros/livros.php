@@ -58,5 +58,9 @@ if($deletado){
 }else{
     echo "Erro ao deletar livro. Verifique se o livro está cadastrado.";
 }
+
+echo "<br>";
+
+echo "<a href='../index.php'>Voltar</a>";
     
 ?>

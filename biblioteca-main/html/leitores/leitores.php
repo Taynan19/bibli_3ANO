@@ -3,10 +3,10 @@ session_start();
 require_once '../funcoes.php';
 verificarLogin();
 
-echo "<h1> Inserir Leitor </h1>";
-inserirLeitor($conexao, "Adauto", "123", "1111111111", "62991111111", "2000-01-01", 
-"admin");
-echo "Leitor inserido <br>";
+//echo "<h1> Inserir Leitor </h1>";
+//inserirLeitor($conexao, "Adauto", "123", "1111111111", "62991111111", "2000-01-01", 
+//"admin");
+//echo "Leitor inserido <br>";
 
 
 echo "<h1> Buscar leitor por ID </h1>";
@@ -29,4 +29,8 @@ atualizarLeitor($conexao, 1, "Joana", 123, "5555555555", "629777777",
 echo "<h1> Deletar Leitor </h1>";
 deletarLeitor($conexao, 2);
 echo "Leitor deletado";
+
+echo "<br>";
+
+echo "<a href='../index.php'>Voltar</a>";
 ?>
