@@ -84,6 +84,9 @@ CREATE TABLE IF NOT EXISTS `banco`.`emprestimos` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+INSERT INTO leitores (nome, senha, cpf, tipo)
+VALUES ('Adauto', '123', '12345678901', 'admin');
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
